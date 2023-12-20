@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 import { LeagueListDto } from '../../types/LeagueListDto';
+import { Sheet, Typography } from '@mui/joy';
 
 const Leaderboard = () => {
   const [challengerLeaderboard, setChallengerLeaderboard] = useState<
@@ -21,7 +22,7 @@ const Leaderboard = () => {
         setError(null);
       } catch (error) {
         setChallengerLeaderboard([]);
-        setError(`Axios data fetch error from backend: challengerLeaderboard`);
+        setError('Axios data fetch error from backend: challengerLeaderboard');
       }
     };
 
@@ -35,8 +36,22 @@ const Leaderboard = () => {
       {/* <pre>{JSON.stringify(challengerLeaderboard, null, 2)}</pre> */}
 
       {challengerLeaderboard && (
-        <>
-          <h1>Challenger Leaderboard</h1>
+        <Sheet
+          sx={{
+            width: 900,
+            mx: 'auto', // margin left & right
+            my: 4, // margin top & bottom
+            py: 3, // padding top & bottom
+            px: 2, // padding left & right
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 2,
+            borderRadius: 'sm',
+            boxShadow: 'md',
+          }}
+          variant="outlined"
+        >
+          <Typography level="h2">Challenger Leaderboard</Typography>
 
           <table>
             <thead>
@@ -61,7 +76,7 @@ const Leaderboard = () => {
               ))}
             </tbody>
           </table>
-        </>
+        </Sheet>
       )}
 
       {error && <p>Error: {error}</p>}
