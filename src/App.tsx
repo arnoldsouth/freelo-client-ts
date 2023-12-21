@@ -1,11 +1,14 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
-import HomePage from './pages/HomePage';
-
 import './App.css';
 
 import Navbar from './components/Navbar/Navbar';
-import Leaderboard from './components/Leaderboard/Leaderboard';
+import HomePage from './pages/HomePage';
+import HomePageLol from './lol/pages/HomePageLol';
+import LeaderboardPageLol from './lol/pages/LeaderboardPageLol';
+import AboutPage from './pages/AboutPage';
+import HomePageVal from './val/pages/HomePageVal';
+import NavbarLol from './lol/components/Navbar/NavbarLol';
 
 const App = () => {
   return (
@@ -13,7 +16,10 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/lol" element={<HomePageLol />} />
+        <Route path="/lol/leaderboard" element={<LeaderboardPageLol />} />
+        <Route path="/val" element={<HomePageVal />} />
       </Routes>
     </Router>
   );

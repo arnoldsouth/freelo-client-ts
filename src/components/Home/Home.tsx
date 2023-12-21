@@ -1,9 +1,7 @@
-import Search from '../Search/Search';
-
 const Home = () => {
   return (
     <div>
-      <Search />
+      <h2>Home Component</h2>
     </div>
   );
 };

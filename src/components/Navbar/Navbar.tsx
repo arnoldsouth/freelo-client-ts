@@ -23,13 +23,34 @@ const Navbar = () => {
           },
         }}
       >
-        <Typography fontSize="sm">
+        <Typography
+          sx={{
+            p: 0.5,
+            gap: 0.5,
+          }}
+          fontSize="lg"
+        >
+          <Link component={RouterLink} underline="none" to="/">
+            FREELO
+            {/* <Tab disableIndicator>FREELO</Tab> */}
+          </Link>
+        </Typography>
+
+        <Typography fontSize={'sm'}>
           <Link component={RouterLink} underline="none" to="/">
             <Tab disableIndicator>Home</Tab>
           </Link>
 
-          <Link component={RouterLink} underline="none" to="/leaderboard">
-            <Tab disableIndicator>Leaderboard</Tab>
+          <Link component={RouterLink} underline="none" to="/about">
+            <Tab disableIndicator>About</Tab>
+          </Link>
+
+          <Link component={RouterLink} underline="none" to="/lol">
+            <Tab disableIndicator>LOL</Tab>
+          </Link>
+
+          <Link component={RouterLink} underline="none" to="/val">
+            <Tab disableIndicator>VAL</Tab>
           </Link>
         </Typography>
       </TabList>

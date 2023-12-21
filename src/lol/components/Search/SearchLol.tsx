@@ -11,7 +11,7 @@ import {
   Typography,
 } from '@mui/joy';
 
-const Search = () => {
+const SearchLol = () => {
   const [summonerNameInput, setSummonerNameInput] = useState('');
   const [summonerData, setSummonerData] = useState<SummonerDto | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -101,4 +101,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchLol;

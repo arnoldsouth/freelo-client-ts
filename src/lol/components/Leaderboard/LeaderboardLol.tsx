@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { LeagueListDto } from '../../types/LeagueListDto';
 import { Sheet, Typography } from '@mui/joy';
 
-const Leaderboard = () => {
+const LeaderboardLol = () => {
   const [challengerLeaderboard, setChallengerLeaderboard] = useState<
     LeagueListDto[]
   >([]);
@@ -84,4 +84,4 @@ const Leaderboard = () => {
   );
 };
 
-export default Leaderboard;
+export default LeaderboardLol;
