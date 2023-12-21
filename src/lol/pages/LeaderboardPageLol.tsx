@@ -1,4 +1,4 @@
-import LeaderboardLol from '../components/Leaderboard/LeaderboardLol';
+import LeaderboardLol from '../components/LeaderboardLol/LeaderboardLol';
 
 const LeaderboardPageLol = () => {
   return (

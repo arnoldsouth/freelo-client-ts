@@ -13,7 +13,7 @@ const LeaderboardLol = () => {
   useEffect(() => {
     const fetchChallengerLeaderboard = async () => {
       try {
-        const response = await axios.get(`lol/league/leaderboard/challenger`);
+        const response = await axios.get(`league/leaderboard/challenger`);
         setChallengerLeaderboard(
           response.data.entries.sort(
             (a: any, b: any) => b.leaguePoints - a.leaguePoints

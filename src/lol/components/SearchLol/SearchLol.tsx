@@ -5,16 +5,20 @@ import { SummonerDto } from '../../types/SummonerDto';
 import {
   Button,
   FormControl,
-  FormLabel,
+  // FormLabel,
   Input,
   Sheet,
   Typography,
 } from '@mui/joy';
 
+import SummonerDetailLol from '../SummonerDetailLol/SummonerDetailLol';
+import { useNavigate } from 'react-router-dom';
+
 const SearchLol = () => {
   const [summonerNameInput, setSummonerNameInput] = useState('');
   const [summonerData, setSummonerData] = useState<SummonerDto | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const handleSearch = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -23,6 +27,8 @@ const SearchLol = () => {
       const response = await axios.get(
         `/lol/summoner/profile/${summonerNameInput}`
       );
+      // navigate(`/lol/search/${summonerNameInput}`);
+
       setSummonerData(response.data);
       setSummonerNameInput('');
       setError(null);
@@ -35,31 +41,36 @@ const SearchLol = () => {
   return (
     <div>
       <Sheet
-        sx={{
-          width: 300,
-          mx: 'auto', // margin left & right
-          my: 4, // margin top & bottom
-          py: 3, // padding top & bottom
-          px: 2, // padding left & right
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 2,
-          borderRadius: 'sm',
-          boxShadow: 'md',
-        }}
-        variant="outlined"
+        sx={
+          {
+            // width: 300,
+            // width: 500,
+            // mx: 'auto', // margin left & right
+            // my: 4, // margin top & bottom
+            // py: 3, // padding top & bottom
+            // px: 2, // padding left & right
+            // display: 'flex',
+            // flexDirection: 'column',
+            // gap: 2,
+            // borderRadius: 'sm',
+            // boxShadow: 'md',
+          }
+        }
+        // variant="outlined"
       >
         <form onSubmit={handleSearch}>
           <FormControl>
-            <FormLabel>Player Search</FormLabel>
-            <Input
-              placeholder="Enter player name"
-              value={summonerNameInput}
-              onChange={(e) => setSummonerNameInput(e.target.value)}
-            />
-            <Button sx={{ mt: 1 /* margin top */ }} type="submit">
-              Search
-            </Button>
+            {/* <FormLabel>Player Search</FormLabel> */}
+            <Sheet sx={{ display: 'flex', flexDirection: 'row' }}>
+              <Input
+                placeholder="Player Search"
+                value={summonerNameInput}
+                onChange={(e) => setSummonerNameInput(e.target.value)}
+              />
+              <Button sx={{ mt: 1 /* margin top */ }} type="submit">
+                Search
+              </Button>
+            </Sheet>
           </FormControl>
         </form>
       </Sheet>
@@ -81,17 +92,12 @@ const SearchLol = () => {
           variant="outlined"
         >
           <div>
-            {/* <pre>{JSON.stringify(summonerData, null, 2)}</pre> */}
-
-            {/* <Typography level="body-xs">ID: {summonerData.id}</Typography>
-            <Typography level="body-xs">
-              Account ID: {summonerData.accountId}
-            </Typography>
-            <Typography level="body-xs">Puuid: {summonerData.puuid}</Typography> */}
             <Typography fontSize="sm">Name: {summonerData.name}</Typography>
+
             <Typography fontSize="sm">
               Summoner Level: {summonerData.summonerLevel}
             </Typography>
+            {/* Render other data from summonerData */}
           </div>
         </Sheet>
       )}

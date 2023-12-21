@@ -11,13 +11,15 @@ const Navbar = () => {
       <TabList
         disableUnderline
         sx={{
-          p: 0.5,
-          gap: 0.5,
-          borderRadius: 'xl',
+          // p: 0.5,
+          // gap: 0.5,
+          gap: 2,
+          borderRadius: 'sm',
           bgcolor: 'background.level1',
 
           [`& .${tabClasses.root}[aria-selected="true"]`]: {
-            boxShadow: 'sm',
+            // boxShadow: 'sm',
+            boxShadow: 'md',
             bgcolor: 'background.surface',
             color: 'primary.plainColor',
           },
@@ -25,32 +27,29 @@ const Navbar = () => {
       >
         <Typography
           sx={{
-            p: 0.5,
-            gap: 0.5,
+            // p: 0.5,
+            // gap: 0.5,
+            display: 'flex',
+            justifyContent: 'center',
+            alignContent: 'center',
           }}
-          fontSize="lg"
         >
           <Link component={RouterLink} underline="none" to="/">
             FREELO
-            {/* <Tab disableIndicator>FREELO</Tab> */}
           </Link>
         </Typography>
 
         <Typography fontSize={'sm'}>
-          <Link component={RouterLink} underline="none" to="/">
-            <Tab disableIndicator>Home</Tab>
-          </Link>
-
-          <Link component={RouterLink} underline="none" to="/about">
-            <Tab disableIndicator>About</Tab>
-          </Link>
-
           <Link component={RouterLink} underline="none" to="/lol">
             <Tab disableIndicator>LOL</Tab>
           </Link>
 
           <Link component={RouterLink} underline="none" to="/val">
             <Tab disableIndicator>VAL</Tab>
+          </Link>
+
+          <Link component={RouterLink} underline="none" to="/about">
+            <Tab disableIndicator>About</Tab>
           </Link>
         </Typography>
       </TabList>

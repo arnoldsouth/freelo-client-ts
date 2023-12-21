@@ -1,11 +1,11 @@
-import HomeLol from '../components/Home/HomeLol';
+import HomeLol from '../components/HomeLol/HomeLol';
+import SummonerDetailPageLol from './SummonerDetailPageLol';
 
 const HomePage = () => {
   return (
     <div>
-      <h1>HomePageLol</h1>
-
       <HomeLol />
+      {/* <SummonerDetailPageLol summonerData={null} /> */}
     </div>
   );
 };
