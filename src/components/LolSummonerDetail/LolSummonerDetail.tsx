@@ -1,12 +1,12 @@
 import { Sheet, Typography } from '@mui/joy';
 import React from 'react';
-import { SummonerDto } from '../../types/SummonerDto';
+import { SummonerDto } from '../../types/loltypes/SummonerDto';
 
 interface SummonerDetailProps {
   summonerData: SummonerDto | null;
 }
 
-const SummonerDetailLol: React.FC<SummonerDetailProps> = ({ summonerData }) => {
+const LolSummonerDetail: React.FC<SummonerDetailProps> = ({ summonerData }) => {
   return (
     <div>
       <pre>{JSON.stringify(summonerData, null, 2)}</pre>
@@ -41,4 +41,4 @@ const SummonerDetailLol: React.FC<SummonerDetailProps> = ({ summonerData }) => {
   );
 };
 
-export default SummonerDetailLol;
+export default LolSummonerDetail;

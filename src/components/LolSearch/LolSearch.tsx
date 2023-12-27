@@ -1,7 +1,7 @@
 // import axios from 'axios';
 import axios from 'axios';
 import { useState } from 'react';
-import { SummonerDto } from '../../types/SummonerDto';
+import { SummonerDto } from '../../types/loltypes/SummonerDto';
 import {
   Button,
   FormControl,
@@ -11,14 +11,13 @@ import {
   Typography,
 } from '@mui/joy';
 
-import SummonerDetailLol from '../SummonerDetailLol/SummonerDetailLol';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
-const SearchLol = () => {
+const LolSearch = () => {
   const [summonerNameInput, setSummonerNameInput] = useState('');
   const [summonerData, setSummonerData] = useState<SummonerDto | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleSearch = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -107,4 +106,4 @@ const SearchLol = () => {
   );
 };
 
-export default SearchLol;
+export default LolSearch;

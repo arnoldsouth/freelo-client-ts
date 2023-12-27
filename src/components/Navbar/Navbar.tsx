@@ -1,5 +1,5 @@
-import { Link, Tab, TabList, Tabs, Typography, tabClasses } from '@mui/joy';
 import { Link as RouterLink } from 'react-router-dom';
+import { Link, Tab, TabList, Tabs, Typography, tabClasses } from '@mui/joy';
 
 const Navbar = () => {
   return (
@@ -15,31 +15,23 @@ const Navbar = () => {
           // gap: 0.5,
           gap: 2,
           borderRadius: 'sm',
-          bgcolor: 'background.level1',
+          // bgcolor: 'background.level1',
+          bgcolor: '#DBDDFF',
 
           [`& .${tabClasses.root}[aria-selected="true"]`]: {
             // boxShadow: 'sm',
             boxShadow: 'md',
             bgcolor: 'background.surface',
-            color: 'primary.plainColor',
+            // color: 'primary.plainColor',
+            color: '#7275a0',
           },
         }}
       >
-        <Typography
-          sx={{
-            // p: 0.5,
-            // gap: 0.5,
-            display: 'flex',
-            justifyContent: 'center',
-            alignContent: 'center',
-          }}
-        >
-          <Link component={RouterLink} underline="none" to="/">
-            FREELO
-          </Link>
-        </Typography>
-
         <Typography fontSize={'sm'}>
+          <Link component={RouterLink} underline="none" to="/">
+            <Tab disableIndicator>FREELO</Tab>
+          </Link>
+
           <Link component={RouterLink} underline="none" to="/lol">
             <Tab disableIndicator>LOL</Tab>
           </Link>

@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-import { LeagueListDto } from '../../types/LeagueListDto';
+import { LeagueListDto } from '../../types/loltypes/LeagueListDto';
 import { Sheet, Typography } from '@mui/joy';
 
-const LeaderboardLol = () => {
+const LolLeaderboard = () => {
   const [challengerLeaderboard, setChallengerLeaderboard] = useState<
     LeagueListDto[]
   >([]);
@@ -38,7 +38,7 @@ const LeaderboardLol = () => {
       {challengerLeaderboard && (
         <Sheet
           sx={{
-            width: 900,
+            width: 600,
             mx: 'auto', // margin left & right
             my: 4, // margin top & bottom
             py: 3, // padding top & bottom
@@ -51,7 +51,7 @@ const LeaderboardLol = () => {
           }}
           variant="outlined"
         >
-          <Typography level="h2">Challenger Leaderboard</Typography>
+          <Typography level="h3">Challenger Leaderboard</Typography>
 
           <table>
             <thead>
@@ -65,9 +65,10 @@ const LeaderboardLol = () => {
             </thead>
 
             <tbody>
-              {players.map((player: any) => (
+              {players.map((player: any, index: number) => (
                 <tr key={player.summonerId}>
-                  <td>{player.rank}</td>
+                  <td>{index + 1}</td>
+                  {/* <td>{player.rank}</td> */}
                   <td>{player.summonerName}</td>
                   <td>{player.leaguePoints}</td>
                   <td>{player.wins}</td>
@@ -84,4 +85,4 @@ const LeaderboardLol = () => {
   );
 };
 
-export default LeaderboardLol;
+export default LolLeaderboard;
