@@ -54,7 +54,7 @@ function ColorSchemeToggle() {
     return <IconButton size="sm" variant="outlined" color="primary" />;
   }
   return (
-    <Tooltip title="Change theme" variant="outlined">
+    <Tooltip title="" variant="outlined">
       <IconButton
         id="toggle-mode"
         size="sm"
